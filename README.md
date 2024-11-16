@@ -143,37 +143,6 @@ The **Contact Management System** is a feature of a CRM application that allows 
 
 ---
 
-## Testing Instructions
-
-1. Use Postman or Thunder Client to test the APIs:
-   - Example for `GET /contacts`:
-     ```
-     GET http://localhost:5000/api/contacts?page=1&limit=5
-     ```
-   - Expected Response:
-     ```
-     {
-         "contacts": [
-             {
-                 "_id": "64b8e9f123456789abcd1234",
-                 "firstName": "John",
-                 "lastName": "Doe",
-                 "email": "john.doe@example.com",
-                 ...
-             }
-         ],
-         "total": 50,
-         "page": 1,
-         "limit": 5
-     }
-     ```
-
-2. Verify UI functionality:
-   - Add a new contact.
-   - Edit an existing contact.
-   - Test pagination and sorting.
-
----
 
 ## Conclusion
 
