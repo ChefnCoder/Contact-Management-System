@@ -38,7 +38,7 @@ const ContactTable = ({ contacts, onEdit, onDelete, onSort, onPaginate, paginati
                     <Table>
                         <TableHead>
                             <TableRow>
-                                {['firstName', 'lastName', 'email', 'phoneNumber'].map((column) => (
+                                {['firstName', 'lastName', 'email', 'phoneNumber', 'company', 'jobTitle'].map((column) => (
                                     <TableCell key={column} onClick={() => handleSort(column)} sx={{ cursor: 'pointer' }}>
                                         <Tooltip title={`Sort by ${column}`} arrow>
                                             <Typography>
@@ -59,7 +59,7 @@ const ContactTable = ({ contacts, onEdit, onDelete, onSort, onPaginate, paginati
                         </TableHead>
                         <TableBody>
                             {contacts.length > 0 ? (
-                                contacts.map((contact, index) => (
+                                contacts.map((contact) => (
                                     <TableRow
                                         key={contact._id}
                                         sx={{
@@ -71,6 +71,8 @@ const ContactTable = ({ contacts, onEdit, onDelete, onSort, onPaginate, paginati
                                         <TableCell>{contact.lastName}</TableCell>
                                         <TableCell>{contact.email}</TableCell>
                                         <TableCell>{contact.phoneNumber}</TableCell>
+                                        <TableCell>{contact.company}</TableCell>
+                                        <TableCell>{contact.jobTitle}</TableCell>
                                         <TableCell>
                                             <IconButton onClick={() => onEdit(contact)}>
                                                 <Edit />
@@ -83,7 +85,7 @@ const ContactTable = ({ contacts, onEdit, onDelete, onSort, onPaginate, paginati
                                 ))
                             ) : (
                                 <TableRow>
-                                    <TableCell colSpan={5} align="center">
+                                    <TableCell colSpan={7} align="center">
                                         <Typography variant="subtitle1" color="textSecondary">
                                             No contacts found. Add some to get started!
                                         </Typography>
